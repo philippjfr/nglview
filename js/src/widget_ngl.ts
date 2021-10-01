@@ -155,7 +155,7 @@ class NGLView extends widgets.DOMWidgetView{
             this.model.comm.on_msg(function(msg) {
                 var buffers = msg.buffers;
                 var content = msg.content.data.content;
-                if (buffers.length && content) {
+                if ((buffers != null) && buffers.length && content) {
                     content.buffers = buffers;
                 }
                 this.model._handle_comm_msg.call(this.model, msg);
